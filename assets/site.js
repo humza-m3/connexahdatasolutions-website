@@ -407,8 +407,9 @@
     if (el) { el.focus({ preventScroll: true }); el.scrollIntoView({ block: "start", behavior: SCROLL }); }
   }
 
-  // Live delivery through FormSubmit (as on connexah.com). It answers 200 even when it has not
-  // delivered (for example before the domain is activated), so success means success === "true".
+  // Live delivery. The launch build posts to the enquiry relay (worker/), which keeps the enquiry and answers at
+  // once, then delivers it to FormSubmit. Both use FormSubmit's reply shape, and FormSubmit answers 200 even when it
+  // has not delivered, so success means success === "true".
   var EMAIL_LABELS = [
     ["Name", "name"], ["Work email", "email"], ["Company website", "website"], ["Country", "country"],
     ["Questions skipped", "questions_skipped"], ["Industry", "industry"], ["Desk headcount", "headcount"],
