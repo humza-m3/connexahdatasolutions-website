@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://connexahdatasolutions.com/sitemap.xml
